@@ -1,0 +1,271 @@
+﻿            <!-- begin::navigation menu -->
+<div class="navigation-menu-body">
+
+    <!-- begin::navigation-logo -->
+    <div>
+        <div id="navigation-logo">
+            <a href="@Url.Action("Index", "Home")">
+                <h3 id="menuParagraph">Pragmatech</h3>
+                <span id="spanParagraph">@stringLocalizer["HRM"]</span>
+            </a>
+        </div>
+    </div>
+    <!-- end::navigation-logo -->
+
+    <div class="navigation-menu-group">
+
+        <div class="open" id="dashboards">
+            <ul>
+                <li class="navigation-divider dividerCustom">@stringLocalizer["HRM"]</li>
+                <li>
+                    @*<a class="nav-link" href="@Url.Action(nameof(EmployeesForStructureController.Index), EmployeesForStructureController.Name, new { Area = "HR"})">
+                        <span>@stringLocalizer["EmployeesForStructure"]</span>
+                    </a>*@
+                </li>
+                <li>
+                    @*<a class="nav-link" href="@Url.Action(nameof(EmployeeController.Index), EmployeeController.Name, new { Area = "HR"})">
+                        <span>@stringLocalizer["Employees"]</span>
+                    </a>*@
+                </li>
+                <li>
+                    @*<a href="@Url.Action(nameof(AlternatelyEmployeeController.Index), AlternatelyEmployeeController.Name, new { Area = "HR"})">
+                        <span>@stringLocalizer["AlternativeEmployees"]</span>
+                    </a>*@
+                </li>
+                <li>
+                    @*<a class="nav-link" href="@Url.Action(nameof(AttendanceController.EmployeeMissedWorkDaysManager), AttendanceController.Name, new { Area = "HR"})">
+                        <span>@stringLocalizer["EmployeeMissedWorkDaysManager"]</span>
+                    </a>*@
+                </li>
+                <li>
+                    @*<a class="nav-link" href="@Url.Action(nameof(DocsRepoController.Index), DocsRepoController.Name, new { Area = "HR"})">
+                        <span>@stringLocalizer["DocsRepo"]</span>
+                    </a>*@
+                </li>
+                <li>
+                    @*<a class="nav-link" href="@Url.Action(nameof(PhysicalPersonController.Index), PhysicalPersonController.Name, new { Area = "CRM"})">
+                        <span>@stringLocalizer["PhysicalPersons"]</span>
+                    </a>*@
+                </li>
+                <li>
+                    <a href="#">
+                        <span>@stringLocalizer["Structures"]</span>
+                    </a>
+                    <ul id="structureId">
+                        <li>
+                            @*<a href="@Url.Action(nameof(BranchController.Index), BranchController.Name, new { Area = "Structure"})">@stringLocalizer["Branch"]</a>*@
+                        </li>
+                        <li>
+                            @*<a href="@Url.Action(nameof(StructureTypeController.Index), StructureTypeController.Name, new { Area = "Structure"})">@stringLocalizer["StructureType"]</a>*@
+                        </li>
+                        <li>
+                            @*<a href="@Url.Action(nameof(StructureController.Index), StructureController.Name, new { Area = "Structure"})">@stringLocalizer["Structure"]</a>*@
+                        </li>
+                        <li>
+                            @*<a href="@Url.Action(nameof(OrganizationStructureController.Index), OrganizationStructureController.Name, new { Area = "Structure"})">@stringLocalizer["OrganizationStructure"]</a>*@
+                        </li>
+                        <li>
+                            @*<a href="@Url.Action(nameof(StaffTypeController.Index), StaffTypeController.Name, new { Area = "Structure"})">@stringLocalizer["StaffType"]</a>*@
+                        </li>
+                        <li>
+                            @*<a href="@Url.Action(nameof(StaffUnitController.Index), StaffUnitController.Name, new { Area = "Structure"})">@stringLocalizer["StaffUnit"]</a>*@
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>@stringLocalizer["Settings"]</span>
+                    </a>
+                    <ul id="settingsId">
+                        <li>
+                            <a class="collapse-item" href="@Url.Action(nameof(CompanyController.Index), CompanyController.Name, new { Area = "Settings"})">@stringLocalizer["Company"]</a>
+                        </li>
+                        <li>
+                            <a class="collapse-item" href="@Url.Action(nameof(ContactTypeController.Index), ContactTypeController.Name, new { Area = "Settings"})">@stringLocalizer["ContactType"]</a>
+                        </li>
+                        <li>
+                            <a class="collapse-item" href="@Url.Action(nameof(CountryController.Index), CountryController.Name, new { Area = "Settings"})">@stringLocalizer["Country"]</a>
+                        </li>
+                        @*<li>
+                            <a class="collapse-item" href="@Url.Action(nameof(DocumentTypeController.Index), DocumentTypeController.Name, new { Area = "Settings"})">@stringLocalizer["DocumentType"]</a>
+                        </li>
+                        <li>
+                            <a class="collapse-item" href="@Url.Action(nameof(EducationInstituteController.Index), EducationInstituteController.Name, new { Area = "Settings"})">@stringLocalizer["EducationInstitute"]</a>
+                        </li>
+                        <li>
+                            <a class="collapse-item" href="@Url.Action(nameof(EducationLevelController.Index), EducationLevelController.Name, new { Area = "Settings"})">@stringLocalizer["EducationLevel"]</a>
+                        </li>*@
+
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(IssuedOrganizationController.Index), IssuedOrganizationController.Name, new { Area = "Settings"})">@stringLocalizer["IssuedOrganization"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(KnowledgeLevelController.Index), KnowledgeLevelController.Name, new { Area = "Settings"})">@stringLocalizer["KnowledgeLevel"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(LanguageController.Index), LanguageController.Name, new { Area = "Settings"})">@stringLocalizer["Language"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(LocalitiesController.Index), LocalitiesController.Name, new { Area = "Settings"})">@stringLocalizer["Localities"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(MartialStatusController.Index), MartialStatusController.Name, new { Area = "Settings"})">@stringLocalizer["MartialStatus"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(PositionController.Index), PositionController.Name, new { Area = "Settings"})">@stringLocalizer["Position"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(PrivilegeController.Index), PrivilegeController.Name, new { Area = "Settings"})">@stringLocalizer["Privilege"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(RelationshipTypeController.Index), RelationshipTypeController.Name, new { Area = "Settings"})">@stringLocalizer["RelationshipType"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(SkillController.Index), SkillController.Name, new { Area = "Settings"})">@stringLocalizer["Skill"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(SpecialitieController.Index), SpecialitieController.Name, new { Area = "Settings"})">@stringLocalizer["Specialitie"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(WorkTypeController.Index), WorkTypeController.Name, new { Area = "Settings"})">@stringLocalizer["WorkType"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ExcludedDayController.Index), ExcludedDayController.Name, new { Area = "Settings"})">@stringLocalizer["ExcludedDay"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(DismissalTypeController.Index), DismissalTypeController.Name, new { Area = "Settings"})">@stringLocalizer["DismissalType"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(TransportController.Index), TransportController.Name, new { Area = "Settings"})">@stringLocalizer["Transport"]</a>*@
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>@stringLocalizer["Reports"]</span>
+                    </a>
+                    <ul id="reportId">
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeEndTestPeriod), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EndTestPeriod"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeAgeReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["AgeReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeAgeEducationReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["AgeEducationReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.SickList), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["SickList"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeContractEndReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["ContractEndReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeAbsentWorkReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["AbsentWorkReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeExpireDocReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["ExpireDocReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeVacationReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EmployeeVacationReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeePrivilegies), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EmployeePrivilegies"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeePenaltyReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EmployeePenaltyReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeStatisticReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EmployeeStatisticReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeStaffUnitLlogReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EmployeeStaffUnitLlogReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeHireDismissalReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EmployeeHireDismissalReport"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(ReportController.EmployeeBirthDateReport), ReportController.Name, new { Area = "Reports"})">@stringLocalizer["EmployeeBirthDateReport"]</a>*@
+                        </li>
+                    </ul>
+                </li>
+                <li class="navigation-divider dividerCustom">@stringLocalizer["Salary"]</li>
+                <li>
+                    <a href="#">
+                        <span>@stringLocalizer["SalaryDocuments"]</span>
+                    </a>
+                    <ul id="salaryDocumentsId">
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(LifeInsuaranceController.Index), LifeInsuaranceController.Name, new { Area = "SalaryCalculation"})">@stringLocalizer["LifeInsuarance"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(PreviousSalaryController.Index), PreviousSalaryController.Name, new { Area = "SalaryCalculation"})">@stringLocalizer["PreviousSalary"]</a>*@
+                        </li>
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(PaymentAdvanceController.Index), PaymentAdvanceController.Name, new { Area = "SalaryCalculation"})">@stringLocalizer["PaymentAdvance"]</a>*@
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>@stringLocalizer["SalaryCalculation"]</span>
+                    </a>
+                    <ul id="salaryCalcId">
+                        <li>
+                            @*<a class="collapse-item" href="@Url.Action(nameof(SalaryDocController.Index), SalaryDocController.Name, new { Area = "SalaryCalculation"})">@stringLocalizer["MonthSalaryReport"]</a>*@
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end::navigation menu -->
+
+<script>
+    var setDefaultActiveToStructure = function () {
+        var path = window.location.pathname;
+        var element = $("ul li a[href='" + path + "']");
+        element.addClass("active");
+        if (element.closest("li").parent("#structureId").length) {
+            $("#structureId").css({ "display": "block" });
+        }
+    }
+    var setDefaultActiveToSettings = function () {
+        var path = window.location.pathname;
+        var element = $("ul li a[href='" + path + "']");
+        element.addClass("active");
+        if (element.closest("li").parent("#settingsId").length) {
+            $("#settingsId").css({ "display": "block" });
+        }
+    }
+    var setDefaultActiveToReports = function () {
+        var path = window.location.pathname;
+        var element = $("ul li a[href='" + path + "']");
+        element.addClass("active");
+        if (element.closest("li").parent("#reportId").length) {
+            $("#reportId").css({ "display": "block" });
+        }
+    }
+    var setDefaultActiveToSalaryDocuments = function () {
+        var path = window.location.pathname;
+        var element = $("ul li a[href='" + path + "']");
+        element.addClass("active");
+        if (element.closest("li").parent("#salaryDocumentsId").length) {
+            $("#salaryDocumentsId").css({ "display": "block" });
+        }
+    }
+    var setDefaultActiveToSalaryCalculation = function () {
+        var path = window.location.pathname;
+        var element = $("ul li a[href='" + path + "']");
+        element.addClass("active");
+        if (element.closest("li").parent("#salaryCalcId").length) {
+            $("#salaryCalcId").css({ "display": "block" });
+        }
+    }
+    setDefaultActiveToStructure();
+    setDefaultActiveToSettings();
+    setDefaultActiveToReports();
+    setDefaultActiveToSalaryDocuments();
+    setDefaultActiveToSalaryCalculation();
+</script>

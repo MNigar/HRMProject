@@ -1,0 +1,19 @@
+﻿<script>
+    var ui = {
+        culture: "",
+        successMessage: "@stringLocalizer["operationSuccessfull"]",
+        loading: "@stringLocalizer["Loading"]..."
+    };
+    var defaultContent = {
+        loading: "<div class=\"m-3\">" +
+            "<div class=\"spinner-border text-purple\" role = \"status\">" +
+            "<span class=\"sr-only\">" + ui.loading + "</span>" +
+            "</div> " + ui.loading +
+            "</div>",
+
+        error: "<div class=\"alert alert-danger alert-dismissible fade show m-3\" role=\"alert\">" +
+            "<strong>Error!</strong> Error occured!" +
+            "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+            "</div>"
+    };
+</script>

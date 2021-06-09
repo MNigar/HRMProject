@@ -1,0 +1,301 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] | HRM</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="~/assets/media/image/logo.png" />
+
+    <!-- Plugin styles -->
+    <!-- Plugin styles -->
+    <link rel="stylesheet" href="~/vendors/bundle.css" type="text/css">
+    <link href="~/js/alertify/alertify.css" rel="stylesheet" />
+
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="~/vendors/datepicker/daterangepicker.css">
+
+    <!-- Vmap -->
+    <link rel="stylesheet" href="~/vendors/vmap/jqvmap.min.css">
+    <!-- App styles -->
+    <link rel="stylesheet" href="~/assets/css/app.min.css" type="text/css" />
+    <link href="~/assets/css/admin.css" rel="stylesheet" />
+    <script src="~/vendors/bundle.js"></script>
+    <script src="~/js/init.js" asp-append-version="true"></script>
+    <script src="~/js/util.js" asp-append-version="true"></script>
+    <script src="~/js/devextreme/jszip.js"></script>
+    @await Html.PartialAsync("_DevExtremePartial")
+    @await Html.PartialAsync("_DefaultsPartial")
+</head>
+<body>
+    <div id="wrapper">
+        <!-- begin::preloader-->
+        <div class="preloader">
+            <div class="preloader-icon"></div>
+        </div>
+        <!-- end::preloader -->
+        <!-- begin::header -->
+        <div class="header">
+
+            <div>
+                <ul class="navbar-nav">
+
+                    <!-- begin::navigation-toggler -->
+                    <li class="nav-item navigation-toggler">
+                        <a href="#" id="navigationS" class="nav-link" title="Hide navigation">
+                            <i data-feather="arrow-left"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item navigation-toggler mobile-toggler">
+                        <a href="#" id="showNavigation" class="nav-link" title="Show navigation">
+                            <i data-feather="menu"></i>
+                        </a>
+                    </li>
+                    @*<li class="nav-item">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">@stringLocalizer["AddNew"]</a>
+                        <div class="dropdown-menu">
+                            <a href="#" onclick="toForms(null);" class="dropdown-item">@stringLocalizer["Employee"]</a>
+                        </div>
+                    </li>*@
+                    @*<li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Apps</a>
+                        <div class="dropdown-menu dropdown-menu-big">
+                            <div class="p-3">
+                                <div class="row row-xs">
+                                    <div class="col-6">
+                                        <a href="@Url.Action("Index", "Home")">
+                                            <div class="p-3 border-radius-1 border text-center mb-3">
+                                                <i class="width-23 height-23 fa fa-fw fa-sitemap"></i>
+                                                <div class="mt-2">HRM</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="#">
+                                            <div class="p-3 border-radius-1 border text-center mb-3">
+                                                <i class="width-23 height-23" data-feather="mail"></i>
+                                                <div class="mt-2">Kargüzarlıq</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>*@
+                    <!-- end::navigation-toggler -->
+
+                </ul>
+            </div>
+
+            <!--<div>
+                <partial name="_Culture" />-->
+            <!-- begin::mobile header toggler -->
+            <!--<ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item header-toggler">
+                    <a href="#" class="nav-link">
+                        <i data-feather="arrow-down"></i>
+                    </a>
+                </li>
+            </ul>-->
+            <!-- end::mobile header toggler -->
+            <!--</div>-->
+            <!--Burdan-->
+
+            <div>
+                <partial name="_Culture" />
+            </div>
+
+            <!--Bura kimi-->
+        </div>
+        <!-- end::header -->
+        <!-- begin::main -->
+        <div id="main">
+
+            <!-- begin::navigation -->
+            <div class="navigation">
+
+                <div class="navigation-menu-tab">
+                    <div>
+                        <div class="navigation-menu-tab-header" data-toggle="tooltip" title="Admin" data-placement="right">
+                            <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
+                                <figure class="avatar avatar-sm">
+                                    <img src="~/assets/media/image/user.png" class="rounded-circle" alt="avatar">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <ul>
+                            <li>
+                                <a class="active" href="#" data-toggle="tooltip" data-placement="right" title="Dashboards"
+                                   data-nav-target="#dashboards">
+                                    <i class="fa fa-fw fa-sitemap"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="Apps" data-nav-target="#apps">
+                                    <i data-feather="command"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="UI Elements"
+                                   data-nav-target="#elements">
+                                    <i data-feather="layers"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="Pages" data-nav-target="#pages">
+                                    <i data-feather="copy"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="@Url.Action("Logout", "Account", new { Area = "" })" data-toggle="tooltip" data-placement="right" title="@stringLocalizer["Logout"]">
+                                    <i data-feather="log-out"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                @await Html.PartialAsync("_LeftMenuPartial")
+            </div>
+            <!-- end::navigation -->
+            <!-- begin::main-content -->
+            <main class="main-content">
+                @*<div class="page-header">
+                        <div class="container-fluid d-sm-flex justify-content-between">
+                            <h4>CRM System</h4>
+                        </div>
+                    </div>*@
+                @*<div id="content-wrapper" class="d-flex flex-column">
+                    <div id="content">*@
+                @*<div id="mainDiv" class="container-fluid">*@
+
+                @RenderBody()
+                @*</div>
+                    </div>*@
+                @*</div>*@
+            </main>
+            <!-- end::main-content -->
+        </div>
+    </div>
+    <div id="modalDiv">
+
+    </div>
+
+    <div id="modalPersonDiv">
+
+    </div>
+    <!-- end::main -->
+    <script src="~/vendors/charts/chartjs/chart.min.js"></script>
+
+    <!-- Apex chart -->
+    <script src="~/vendors/charts/apex/apexcharts.min.js"></script>
+
+    <!-- Circle progress -->
+    <script src="~/vendors/circle-progress/circle-progress.min.js"></script>
+
+    <!-- Peity -->
+    <script src="~/vendors/charts/peity/jquery.peity.min.js"></script>
+    <script src="~/assets/js/examples/charts/peity.js"></script>
+    <script src="~/assets/js/examples/sweet-alert.js"></script>
+
+
+    <!-- Datepicker -->
+    <script src="~/vendors/datepicker/daterangepicker.js"></script>
+
+    <!-- Slick -->
+    <script src="~/vendors/slick/slick.min.js"></script>
+
+    <!-- Vamp -->
+    <script src="~/vendors/vmap/jquery.vmap.min.js"></script>
+    <script src="~/vendors/vmap/maps/jquery.vmap.usa.js"></script>
+    <script src="~/assets/js/examples/vmap.js"></script>
+
+    <!-- Dashboard scripts -->
+    <script src="~/assets/js/examples/dashboard.js"></script>
+    <script src="~/vendors/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/core/dialog.js" asp-append-version="true"></script>
+    <script src="~/js/alertify/alertify-init.js" asp-append-version="true"></script>
+    <script src="~/js/alertify/alertify.js" asp-append-version="true"></script>
+    <script src="~/assets/js/app.min.js"></script>
+    <script src="~/js/dt-grid.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+    <!-- App scripts -->
+
+    <script type="text/javascript">
+    @*function getExecuteWorkModal() {
+    $.get('@Url.Action(nameof(WorkFlowController.GetExecuteWorkModal), "WorkFlow")', { workId: workId, productId: selectedId, productType: productType },
+    function (response) {
+    $("#modalDiv").html(response);
+    $("#executeWorkModal").modal('show');
+    }).fail(function (error) {
+    swal("Error!", error.statusText, "error");
+
+
+    });
+    }*@
+
+    function getApplicationPath() {
+    var result = '@Url.Content("~")';
+    if (result === '/') result = '';
+    return result;
+    }
+
+    function showProduct(docId,controllerName) {
+
+    location.href = '/'+controllerName +'/Form/' + docId;
+    }
+
+
+    function success(response) {
+    $("#formModal").modal('hide');
+    $("#dt-grid").dxDataGrid("getDataSource").reload();
+    }
+
+    function executeSuccess(response) {
+    $("#executeWorkModal").modal('hide');
+    $("#dt-grid").dxDataGrid("getDataSource").reload();
+    }
+
+    function successCredential(response) {
+    $("#crediantial").html(response);
+    }
+
+    @*function toCredentialPersonForm() {
+
+    $.get('@Url.Action(nameof(DocsRepoController.EmployeeCredentialDelegationForm), DocsRepoController.Name)', { employeeFromId: selectedId },
+
+    function (response) {
+    $("#modalPersonDiv").html(response);
+    $("#EmployeeCredentialDelegationForm").modal('show');
+
+    }).fail(function (error) {
+    swal("Error!", error.statusText, "error");
+    });
+    }*@
+
+        @*function toForms(id) {
+            $.get('@Url.Action(nameof(EmployeeController.Form), EmployeeController.Name, new { area = "HR"})', { id: id },
+            function (response) {
+                $("#modalDiv").html(response);
+                $("#formModal").modal('show');
+
+            }).fail(function (error) {
+                swal("Error!", error.statusText, "error");
+            });
+    }*@
+    </script>
+    @*@await Html.PartialAsync("_ValidationScriptsPartial")*@
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

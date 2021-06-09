@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+@using HRProject.Models.Common
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var returnUrl = string.IsNullOrWhiteSpace(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
+    var cultureItems = LocOptions.Value.SupportedUICultures
+.Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+.ToList();
+    List<LanguageImage> list = new List<LanguageImage> ();
+    list.Add(new LanguageImage()
+    {
+        Image = "az.png",
+        Language = "Azerbaijani"
+    });
+    list.Add(new LanguageImage()
+    {
+        Image = "en.png",
+        Language = "English"
+    });
+    list.Add(new LanguageImage()
+    {
+        Image = "ru.png",
+        Language = "Russian"
+    });
+
+    ViewBag.Images = list;
+
+}
+
+<div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
+    <form id="selectLanguage" asp-action="CultureManagemenet" asp-controller="Home" asp-route-returnUrl="@returnUrl"
+          method="post" class="form-horizontal" role="form">
+        <ul name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" onchange="this.form.submit();">
+            <li class="nav-item" name="culture">
+                <a href="#" name="culture" class="nav-link dropdown-toggle" data-toggle="dropdown" asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                    @stringLocalizer["SelectLanguage"]
+                </a>
+                <div class="dropdown-menu" name="culture">
+                    @foreach (var i in cultureItems)
+                    {
+                        <button type="submit" class="dropdown-item" name="culture" value="@i.Value" asp-for="@requestCulture.RequestCulture.UICulture.Name" onclick="this.form.submit();">
+                            <img width="18" src="~/assets/media/image/@ViewBag.Images[cultureItems.IndexOf(i)].Image" class="mr-2" alt="flag">
+                            @stringLocalizer[@ViewBag.Images[cultureItems.IndexOf(i)].Language]
+                        </button>
+                    }
+
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+

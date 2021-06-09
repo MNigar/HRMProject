@@ -1,0 +1,50 @@
+﻿@model Tuple<String, String>
+
+<div class="row mb-3">
+    <div class="col" id="col">
+        <button type="button" class="btn btn-sm btn-outline-primary" onclick="dtGrid.reload();"><i class="dx-icon-refresh"></i></button>
+        <button type="button" class="btn  btn-sm btn-outline-primary" onclick="dtGrid.filter();"><i class="fa fa-search"></i></button>
+        <button id="btnNew" type="button" class="btn btn-sm btn-primary" onclick="toForm(null);"><i class="fa fa-plus"></i> @stringLocalizer["AddNew"]</button>
+        <button id="btnEdit" type="button" class="btn btn-sm btn-primary" onclick="toForm(selectedId);" disabled><i class="fa fa-edit"></i> @stringLocalizer["Edit"]</button>
+        <button id="btnRemove" type="button" class="btn btn-sm btn-danger active" onclick="remove('@Model.Item1')" disabled><i class="fa fa-trash"></i> @stringLocalizer["Remove"]</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var allData = true;
+
+    function remove(url) {
+
+        dialog.confirm('@stringLocalizer["AreYouSureRemoveData"]', function () {
+
+            $.ajax(url, {
+                data: { id: selectedId },
+                method: "POST",
+                success: function (response) {
+                    dtGrid.reload();
+                },
+                error: function (error) {
+                    success(error);
+                }
+            });
+        });
+    }
+
+     function toForm(id) {
+        $.get('@Model.Item2', { id: id },
+
+            function (response) {
+                $("#modalDiv").html(response);
+                $("#formModal").modal('show');
+
+            }).fail(function (error) {
+                swal("Error!", error.statusText, "error");
+            });
+    }
+
+
+
+
+
+</script>
