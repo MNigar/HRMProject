@@ -1,0 +1,21 @@
+﻿@using HRProject.Extensions
+@using HRProject.Areas.Settings.Models.GridModel
+@model bool?
+@(Html.DevExtreme().DataGrid<LocalitiesGridModel>()
+    .ID("dt-grid")
+    .DataSource(d => d.Mvc().Area("Settings").Controller(LocalitiesController.Name).LoadAction(nameof(LocalitiesController.GetData)))
+    .RemoteOperations(true)
+    .ShowBorders(true)
+    .ShowRowLines(true)
+    .AllowColumnResizing(true)
+    .HRMGrid()
+    .Columns(c =>
+    {
+        c.AddFor(x => x.Name).Caption(stringLocalizer["Name"]);
+        c.AddFor(x => x.Description).Caption(stringLocalizer["Description"]);
+        c.AddFor(x => x.CountryName).Caption(stringLocalizer["CountryName"]);
+    })
+    .Pager(p => p.AllowedPageSizes(new int[] { 5, 20, 50 }))
+    .Paging(paging => paging.PageSize(10))
+.Selection(s => s.Mode(SelectionMode.Single)).OnSelectionChanged("dtGrid.selectionChanged")
+)

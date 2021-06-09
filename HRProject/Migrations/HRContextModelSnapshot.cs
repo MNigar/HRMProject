@@ -19,6 +19,23 @@ namespace HRProject.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("HRProject.Models.DTO.BranchDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Branches");
+                });
+
             modelBuilder.Entity("HRProject.Models.DTO.CompanyDto", b =>
                 {
                     b.Property<Guid>("Id")
@@ -70,13 +87,81 @@ namespace HRProject.Migrations
                     b.ToTable("Countries");
                 });
 
+            modelBuilder.Entity("HRProject.Models.DTO.DismissalTypeDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DismissalTypes");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.DocumentTypeDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DocumentTypes");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.EducationInstituteDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EducationInstitutes");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.EducationLevelDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EducationLevels");
+                });
+
             modelBuilder.Entity("HRProject.Models.DTO.LocalitiesDTO", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CountryId")
+                    b.Property<Guid?>("CountryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -89,23 +174,74 @@ namespace HRProject.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.ToTable("LocalitiesDTO");
+                    b.ToTable("Localities");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.StructureDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("StructureTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StructureTypeId");
+
+                    b.ToTable("StructureDTO");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.StructureTypeDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StructureTypes");
                 });
 
             modelBuilder.Entity("HRProject.Models.DTO.LocalitiesDTO", b =>
                 {
                     b.HasOne("HRProject.Models.DTO.CountryDTO", "Country")
                         .WithMany("Localities")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CountryId");
 
                     b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.StructureDTO", b =>
+                {
+                    b.HasOne("HRProject.Models.DTO.StructureTypeDTO", "StructureType")
+                        .WithMany("Structures")
+                        .HasForeignKey("StructureTypeId");
+
+                    b.Navigation("StructureType");
                 });
 
             modelBuilder.Entity("HRProject.Models.DTO.CountryDTO", b =>
                 {
                     b.Navigation("Localities");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.StructureTypeDTO", b =>
+                {
+                    b.Navigation("Structures");
                 });
 #pragma warning restore 612, 618
         }

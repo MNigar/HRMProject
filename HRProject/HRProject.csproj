@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Settings\Data\" />
+    <Folder Include="Areas\Structure\Data\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -27,10 +28,10 @@
 
   <ItemGroup>
     <Reference Include="DevExtreme.AspNet.Core">
-      <HintPath>C:\Users\Nigar\Downloads\DevExtreme.AspNet.Core.dll</HintPath>
+      <HintPath>C:\Users\n.mammadova\.nuget\packages\devextreme.aspnet.data\2.0.0\lib\netstandard2.0\DevExtreme.AspNet.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExtreme.AspNet.Data">
-      <HintPath>C:\Users\Nigar\Downloads\DevExtreme.AspNet.Data.dll</HintPath>
+      <HintPath>C:\Users\n.mammadova\.nuget\packages\devextreme.aspnet.data\2.0.0\lib\netstandard2.0\DevExtreme.AspNet.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
 

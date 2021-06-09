@@ -7,7 +7,7 @@ namespace HRProject.Models.DTO
 {
     public class LocalitiesDTO:BaseDTO
     {
-        public Guid CountryId { get; set; }
+        public Guid? CountryId { get; set; }
         public virtual CountryDTO Country { get; set; }
     }
 }

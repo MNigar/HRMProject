@@ -49,14 +49,14 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span>@stringLocalizer["Structures"]</span>
+                        <span>@*@stringLocalizer["Structures"]*@ Structure   </span>
                     </a>
                     <ul id="structureId">
                         <li>
-                            @*<a href="@Url.Action(nameof(BranchController.Index), BranchController.Name, new { Area = "Structure"})">@stringLocalizer["Branch"]</a>*@
+                            <a href="@Url.Action(nameof(BranchController.Index), BranchController.Name, new { Area = "Structure"})">@stringLocalizer["Branch"]</a>
                         </li>
                         <li>
-                            @*<a href="@Url.Action(nameof(StructureTypeController.Index), StructureTypeController.Name, new { Area = "Structure"})">@stringLocalizer["StructureType"]</a>*@
+                            <a href="@Url.Action(nameof(StructureTypeController.Index), StructureTypeController.Name, new { Area = "Structure"})">@stringLocalizer["StructureType"]</a>
                         </li>
                         <li>
                             @*<a href="@Url.Action(nameof(StructureController.Index), StructureController.Name, new { Area = "Structure"})">@stringLocalizer["Structure"]</a>*@
@@ -86,7 +86,7 @@
                         <li>
                             <a class="collapse-item" href="@Url.Action(nameof(CountryController.Index), CountryController.Name, new { Area = "Settings"})">@stringLocalizer["Country"]</a>
                         </li>
-                        @*<li>
+                        <li>
                             <a class="collapse-item" href="@Url.Action(nameof(DocumentTypeController.Index), DocumentTypeController.Name, new { Area = "Settings"})">@stringLocalizer["DocumentType"]</a>
                         </li>
                         <li>
@@ -94,7 +94,7 @@
                         </li>
                         <li>
                             <a class="collapse-item" href="@Url.Action(nameof(EducationLevelController.Index), EducationLevelController.Name, new { Area = "Settings"})">@stringLocalizer["EducationLevel"]</a>
-                        </li>*@
+                        </li>
 
                         <li>
                             @*<a class="collapse-item" href="@Url.Action(nameof(IssuedOrganizationController.Index), IssuedOrganizationController.Name, new { Area = "Settings"})">@stringLocalizer["IssuedOrganization"]</a>*@
@@ -106,7 +106,7 @@
                             @*<a class="collapse-item" href="@Url.Action(nameof(LanguageController.Index), LanguageController.Name, new { Area = "Settings"})">@stringLocalizer["Language"]</a>*@
                         </li>
                         <li>
-                            @*<a class="collapse-item" href="@Url.Action(nameof(LocalitiesController.Index), LocalitiesController.Name, new { Area = "Settings"})">@stringLocalizer["Localities"]</a>*@
+                            <a class="collapse-item" href="@Url.Action(nameof(LocalitiesController.Index), LocalitiesController.Name, new { Area = "Settings"})">@stringLocalizer["Localities"]</a>
                         </li>
                         <li>
                             @*<a class="collapse-item" href="@Url.Action(nameof(MartialStatusController.Index), MartialStatusController.Name, new { Area = "Settings"})">@stringLocalizer["MartialStatus"]</a>*@
@@ -133,7 +133,7 @@
                             @*<a class="collapse-item" href="@Url.Action(nameof(ExcludedDayController.Index), ExcludedDayController.Name, new { Area = "Settings"})">@stringLocalizer["ExcludedDay"]</a>*@
                         </li>
                         <li>
-                            @*<a class="collapse-item" href="@Url.Action(nameof(DismissalTypeController.Index), DismissalTypeController.Name, new { Area = "Settings"})">@stringLocalizer["DismissalType"]</a>*@
+                            <a class="collapse-item" href="@Url.Action(nameof(DismissalTypeController.Index), DismissalTypeController.Name, new { Area = "Settings"})">@stringLocalizer["DismissalType"]</a>
                         </li>
                         <li>
                             @*<a class="collapse-item" href="@Url.Action(nameof(TransportController.Index), TransportController.Name, new { Area = "Settings"})">@stringLocalizer["Transport"]</a>*@

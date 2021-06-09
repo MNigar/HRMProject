@@ -1,4 +1,5 @@
 using HRProject.Areas.Settings.Services;
+using HRProject.Areas.Structure.Services;
 using HRProject.Resource;
 using HRProject.Security;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -41,6 +42,15 @@ namespace HRProject
             services.AddScoped<CompanyService>();
             services.AddScoped<ContactTypeService>();
             services.AddScoped<CountryService>();
+            services.AddScoped<DismissalTypesService>();
+            services.AddScoped<DocumentTypeService>();
+            services.AddScoped<EducationInstituteService >();
+            services.AddScoped<EducationLevelService>();
+            services.AddScoped<LocalitiesService>();
+            services.AddScoped<BranchService>();
+            services.AddScoped<StructureTypeService>();
+
+
 
             services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddMvc()
