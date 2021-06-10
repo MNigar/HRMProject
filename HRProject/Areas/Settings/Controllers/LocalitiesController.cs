@@ -38,7 +38,7 @@ namespace HRProject.Areas.Settings.Controllers
         }
         [HttpGet]
         [Route("getall")]
-        public IActionResult GetData(DataSourceLoadOptions option)
+        public IActionResult GetAll(DataSourceLoadOptions option)
         {
             var loadResult = DataSourceLoader.Load(_service.GetAll(), option);
             return Content(loadResult.GetSerializeObject(), "application/json");

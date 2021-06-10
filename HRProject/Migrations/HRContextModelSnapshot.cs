@@ -155,6 +155,23 @@ namespace HRProject.Migrations
                     b.ToTable("EducationLevels");
                 });
 
+            modelBuilder.Entity("HRProject.Models.DTO.IssuedOrganizationDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IssuedOrganizations");
+                });
+
             modelBuilder.Entity("HRProject.Models.DTO.LocalitiesDTO", b =>
                 {
                     b.Property<Guid>("Id")
@@ -177,6 +194,40 @@ namespace HRProject.Migrations
                     b.ToTable("Localities");
                 });
 
+            modelBuilder.Entity("HRProject.Models.DTO.MartialStatusDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MartialStatuses");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.PositionDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Positions");
+                });
+
             modelBuilder.Entity("HRProject.Models.DTO.StructureDTO", b =>
                 {
                     b.Property<Guid>("Id")
@@ -196,7 +247,7 @@ namespace HRProject.Migrations
 
                     b.HasIndex("StructureTypeId");
 
-                    b.ToTable("StructureDTO");
+                    b.ToTable("Structures");
                 });
 
             modelBuilder.Entity("HRProject.Models.DTO.StructureTypeDTO", b =>

@@ -176,5 +176,63 @@ namespace HRProject.Areas.Settings.Models
                 Description = viewModel.Description
             };
         }
+        internal static IssuedOrganizationViewModel ConvertToIssuedOrganizationViewModel(IssuedOrganizationDTO dto)
+        {
+            return new IssuedOrganizationViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static IssuedOrganizationDTO ConvertToIssuedOrganizationDTO(IssuedOrganizationViewModel viewModel)
+        {
+            return new IssuedOrganizationDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        internal static MartialStatusViewModel ConvertToMartialStatusViewModel(MartialStatusDTO dto)
+        {
+            return new MartialStatusViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static MartialStatusDTO ConvertToMartialStatusDTO(MartialStatusViewModel viewModel)
+        {
+            return new MartialStatusDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        
+        internal static PositionViewModel ConvertToPositionViewModel(PositionDTO dto)
+        {
+            return new PositionViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static PositionDTO ConvertToPositionDTO(PositionViewModel viewModel)
+        {
+            return new PositionDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
     }
 }

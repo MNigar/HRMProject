@@ -1,4 +1,5 @@
 ﻿using HRProject.Areas.Structure.Models;
+using HRProject.Areas.Structure.Models.GridModel;
 using HRProject.Models.DTO;
 using HRProject.Security;
 using System;
@@ -52,12 +53,21 @@ namespace HRProject.Areas.Structure.Services
             return viewModel;
 
         }
-        public IQueryable<StructureDTO> GetAll()
+        public IQueryable<StructureGridModel> GetAll()
         {
 
-            var data = _context.Structures.ToList().AsQueryable();
-
-            return data;
+            var result = from structure in _context.Structures
+                         join type in _context.StructureTypes
+                         on structure.StructureTypeId equals type.Id
+                         select new StructureGridModel
+                         {
+                             Id = structure.Id,
+                             Name = structure.Name,
+                             Description = structure.Description,
+                             StructureTypeName = type.Name,
+                             StructureTypeId = type.Id
+                         };
+            return result;
 
         }
 

@@ -373,3 +373,15 @@ D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Structure\
 D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Structure\Views\StructureType\Form.cshtml.g.cs
 D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Structure\Views\StructureType\Index.cshtml.g.cs
 D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Structure\Views\StructureType\_GridPartial.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Structure\Views\Structure\Form.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Structure\Views\Structure\Index.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Structure\Views\Structure\_GridPartial.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\IssuedOrganization\Form.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\IssuedOrganization\Index.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\IssuedOrganization\_GridPartial.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\MartialStatus\Form.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\MartialStatus\Index.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\MartialStatus\_GridPartial.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\Position\Form.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\Position\Index.cshtml.g.cs
+D:\COVID1904\HRMProject\HRProject\obj\Debug\netcoreapp3.1\Razor\Areas\Settings\Views\Position\_GridPartial.cshtml.g.cs

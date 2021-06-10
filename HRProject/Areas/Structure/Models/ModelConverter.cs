@@ -54,7 +54,8 @@ namespace HRProject.Areas.Structure.Models
             {
                 Id = dto.Id,
                 Name = dto.Name,
-                Description = dto.Description
+                Description = dto.Description,
+                StructureTypeId=dto.StructureTypeId,
             };
         }
         internal static StructureDTO ConvertToStructureDTO(StructureViewModel viewModel)
@@ -63,9 +64,60 @@ namespace HRProject.Areas.Structure.Models
             {
                 Id = viewModel.Id,
                 Name = viewModel.Name,
-
+                StructureTypeId = viewModel.StructureTypeId,
                 Description = viewModel.Description
             };
         }
+
+        
+       internal static StaffTypeViewModel ConvertToStaffTypeViewModel(StaffTypeDTO dto)
+        {
+            return new StaffTypeViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description,
+               VacationDayLimit=dto.VacationDayLimit
+            };
+        }
+        internal static StaffTypeDTO ConvertToStaffTypeDTO(StaffTypeViewModel viewModel)
+        {
+            return new StaffTypeDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                VacationDayLimit = viewModel.VacationDayLimit,
+                Description = viewModel.Description
+            };
+        }
+        internal static OrganizationStructureViewModel ConvertToOrganizationStructureViewModel(OrganizationStructureDTO dto)
+        {
+            return new OrganizationStructureViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description,
+                BranchId=dto.BranchId,
+                ParentBranchId=dto.ParentBranchId,
+                OrganizationStructureId=dto.OrganizationStructureId,
+                StructureId=dto.StructureId
+
+            };
+        }
+        internal static OrganizationStructureDTO ConvertToOrganizationStructureDTO(OrganizationStructureViewModel viewModel)
+        {
+            return new OrganizationStructureDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description,
+                BranchId = viewModel.BranchId,
+                ParentBranchId = viewModel.ParentBranchId,
+                OrganizationStructureId = viewModel.OrganizationStructureId,
+                StructureId = viewModel.StructureId
+
+            };
+        }
+        
     }
 }

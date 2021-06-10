@@ -22,6 +22,12 @@ namespace HRProject.Security
         public virtual DbSet<BranchDTO> Branches { get; set; }
         public virtual DbSet<StructureTypeDTO> StructureTypes { get; set; }
         public virtual DbSet<StructureDTO> Structures { get; set; }
-
+        public virtual DbSet<IssuedOrganizationDTO> IssuedOrganizations { get; set; }
+        public virtual DbSet<MartialStatusDTO> MartialStatuses { get; set; }
+        public virtual DbSet<PositionDTO> Positions { get; set; }
+        public virtual DbSet<StaffTypeDTO> StaffTypes { get; set; }
+        
+        public virtual DbSet<OrganizationStructureDTO> OrganizationStructures { get; set; }
+        public virtual DbSet<StaffUnitDTO> StaffUnits { get; set; }
     }
 }

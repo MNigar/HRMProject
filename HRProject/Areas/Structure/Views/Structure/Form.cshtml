@@ -29,7 +29,15 @@
 
 
                     </div>
-
+                    <div class="form-group">
+                        <h6 class="sub-title">StructureType</h6>
+                        @(Html.DevExtreme().SelectBoxFor(x => x.StructureTypeId)
+                                    .DataSource(x => x.Mvc().Controller(StructureTypeController.Name).LoadAction(nameof(StructureTypeController.GetAll)).Key("Id"))
+                                    .DisplayExpr("Name")
+                                    .ValueExpr("Id")
+                                    .Placeholder(/*stringLocalizer["ChooseSelectBox"]*/ "ChooseSelectBox")
+                                    .NoDataText(/*stringLocalizer["NoData"]*/ "ChooseSelectBox"))
+                    </div>
                     <div class="form-group">
                         <h6 class="sub-title">Description</h6>
                         @Html.DevExtreme().TextAreaFor(x => x.Description).StylingMode(EditorStylingMode.Filled)

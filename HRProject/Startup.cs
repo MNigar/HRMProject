@@ -49,6 +49,8 @@ namespace HRProject
             services.AddScoped<LocalitiesService>();
             services.AddScoped<BranchService>();
             services.AddScoped<StructureTypeService>();
+            services.AddScoped<StructureService>();
+            services.AddScoped<IssuedOrganizationService>();
 
 
 

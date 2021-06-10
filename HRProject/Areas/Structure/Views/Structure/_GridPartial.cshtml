@@ -1,7 +1,8 @@
 ﻿@using HRProject.Extensions
 @using HRProject.Models.DTO
+@using HRProject.Areas.Structure.Models.GridModel 
 @model bool?
-@(Html.DevExtreme().DataGrid<StructureDTO>()
+@(Html.DevExtreme().DataGrid<StructureGridModel>()
     .ID("dt-grid")
     .DataSource(d => d.Mvc().Area("Structure").Controller(StructureController.Name).LoadAction(nameof(StructureController.GetAll)))
     .RemoteOperations(true)
@@ -12,6 +13,7 @@
     .Columns(c =>
     {
         c.AddFor(x => x.Name).Caption(stringLocalizer["Name"]);
+        c.AddFor(x => x.StructureTypeName).Caption(stringLocalizer["StructureTypeName"]);
         c.AddFor(x => x.Description).Caption(stringLocalizer["Description"]);
     })
     .Pager(p => p.AllowedPageSizes(new int[] { 5, 20, 50 }))
