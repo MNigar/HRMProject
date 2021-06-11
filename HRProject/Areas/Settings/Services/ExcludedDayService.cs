@@ -20,7 +20,7 @@ namespace HRProject.Areas.Settings.Services
         public ExcludedDayDTO Save(ExcludedDayViewModel model)
         {
             model.IsNew = false;
-
+            model.IsHoliday = true;
             if (model.Id == Guid.Empty)
             {
 

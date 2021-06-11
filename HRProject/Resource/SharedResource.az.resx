@@ -144,6 +144,9 @@
   <data name="Description" xml:space="preserve">
     <value>Təsvir</value>
   </data>
+  <data name="DismissalType" xml:space="preserve">
+    <value>İşdən azad olma səbəbi</value>
+  </data>
   <data name="DocumentType" xml:space="preserve">
     <value>Sənəd növləri</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="EducationLevel" xml:space="preserve">
     <value>Təhsil səviyyəsi</value>
+  </data>
+  <data name="ExcludedDay" xml:space="preserve">
+    <value>Qeyri iş günləri</value>
   </data>
   <data name="IssuedOrganization" xml:space="preserve">
     <value>Sənəd verən orqan</value>
@@ -211,7 +217,10 @@
     <value>Tənzimləmələr</value>
   </data>
   <data name="Skill" xml:space="preserve">
-    <value>Bacarıq</value>
+    <value>Təcrübə</value>
+  </data>
+  <data name="Specialitie" xml:space="preserve">
+    <value>İxtisas</value>
   </data>
   <data name="StaffType" xml:space="preserve">
     <value>Vəzifə Kateqoriyaları</value>
@@ -227,5 +236,11 @@
   </data>
   <data name="StructureType" xml:space="preserve">
     <value>Struktur Tipi</value>
+  </data>
+  <data name="Transport" xml:space="preserve">
+    <value>Nəqliyyat vasitəsi</value>
+  </data>
+  <data name="WorkType" xml:space="preserve">
+    <value>İş növü</value>
   </data>
 </root>
