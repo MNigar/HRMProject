@@ -2,6 +2,7 @@
 using HRProject.Areas.Structure.Models.GridModel;
 using HRProject.Models.DTO;
 using HRProject.Security;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,10 +32,15 @@ namespace HRProject.Areas.Structure.Services
 
             if (model.IsNew == true)
             {
+                data.CreatedDate = DateTime.Now;
+                data.UpdatedDate = null;
                 _context.OrganizationStructures.Add(data);
             }
             else
             {
+                var date = _context.OrganizationStructures.Where(x => x.Id == data.Id).AsNoTracking().FirstOrDefault().CreatedDate;
+                data.CreatedDate = date;
+                data.UpdatedDate = DateTime.Now;
                 _context.OrganizationStructures.Update(data);
             }
             _context.SaveChanges();
@@ -60,11 +66,10 @@ namespace HRProject.Areas.Structure.Services
                          join strc in _context.Structures
                          on org.StructureId equals strc.Id
                          join branch in _context.Branches
-                         on org.BranchId equals branch.Id
-                          
-
+                         on org.BranchId equals branch.Id                          
                          join parentBranch in _context.Branches
-                         on org.ParentBranchId equals parentBranch.Id
+                         on org.ParentBranchId equals parentBranch.Id into parentBranchS
+                         from parentBranch in parentBranchS.DefaultIfEmpty()
                          join self in _context.OrganizationStructures
                          on org.OrganizationStructureId equals self.Id into selfs
                          from self in selfs.DefaultIfEmpty()
@@ -86,10 +91,10 @@ namespace HRProject.Areas.Structure.Services
 
         public void Remove(Guid? id)
         {
-            var company = _context.OrganizationStructures.Find(id);
-            if (company != null)
+            var data = _context.OrganizationStructures.Find(id);
+            if (data != null)
             {
-                _context.OrganizationStructures.Remove(company);
+                _context.OrganizationStructures.Remove(data);
                 _context.SaveChanges();
             }
         }

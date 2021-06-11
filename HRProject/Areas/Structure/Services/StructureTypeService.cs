@@ -1,6 +1,7 @@
 ﻿using HRProject.Areas.Structure.Models;
 using HRProject.Models.DTO;
 using HRProject.Security;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +31,15 @@ namespace HRProject.Areas.Structure.Services
 
             if (model.IsNew == true)
             {
+                data.CreatedDate = DateTime.Now;
+                data.UpdatedDate = null;
                 _context.StructureTypes.Add(data);
             }
             else
             {
+                var date = _context.StructureTypes.Where(x => x.Id == data.Id).AsNoTracking().FirstOrDefault().CreatedDate;
+                data.CreatedDate = date;
+                data.UpdatedDate = DateTime.Now;
                 _context.StructureTypes.Update(data);
             }
             _context.SaveChanges();
@@ -63,10 +69,10 @@ namespace HRProject.Areas.Structure.Services
 
         public void Remove(Guid? id)
         {
-            var company = _context.StructureTypes.Find(id);
-            if (company != null)
+            var data = _context.StructureTypes.Find(id);
+            if (data != null)
             {
-                _context.StructureTypes.Remove(company);
+                _context.StructureTypes.Remove(data);
                 _context.SaveChanges();
             }
         }

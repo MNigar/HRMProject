@@ -12,7 +12,6 @@
     .HRMGrid()
     .Columns(c =>
     {
-        c.AddFor(x => x.Name).Caption(stringLocalizer["Name"]);
         c.AddFor(x => x.BranchName).Caption(stringLocalizer["BranchName"]);
         c.AddFor(x => x.StructureName).Caption(stringLocalizer["StructureName"]);
 
@@ -20,7 +19,6 @@
 
         c.AddFor(x => x.ParentBranchName).Caption(stringLocalizer["ParentBranchName"]);
 
-        c.AddFor(x => x.Description).Caption(stringLocalizer["Description"]);
     })
     .Pager(p => p.AllowedPageSizes(new int[] { 5, 20, 50 }))
     .Paging(paging => paging.PageSize(10))

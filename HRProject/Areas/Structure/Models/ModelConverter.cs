@@ -44,7 +44,7 @@ namespace HRProject.Areas.Structure.Models
             {
                 Id = viewModel.Id,
                 Name = viewModel.Name,
-
+               
                 Description = viewModel.Description
             };
         }

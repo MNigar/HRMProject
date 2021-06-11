@@ -56,6 +56,18 @@ namespace HRProject
             services.AddScoped<OrganizationStructureService>();
             services.AddScoped<KnowledgeLevelService>();
             services.AddScoped<LanguageService>();
+            services.AddScoped<ExcludedDayService>();
+            services.AddScoped<PrivilegeService>();
+
+            services.AddScoped<RelationshipTypeService>();
+
+            services.AddScoped<SkillService>();
+            services.AddScoped<SpecialitieService>();
+            services.AddScoped<WorkTypeService>();
+            services.AddScoped<TransportService>();
+            services.AddScoped<MartialStatusService>();
+            services.AddScoped<PositionService>();
+
             services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddMvc()
     .AddDataAnnotationsLocalization(options =>

@@ -1,0 +1,26 @@
+﻿@using HRProject.Areas.Settings.Controllers;
+@{
+    ViewData["Title"] = "Skill";
+}
+<div class="page-header">
+    <div class="container-fluid d-sm-flex justify-content-between">
+        <h4>@ViewData["Title"]</h4>
+    </div>
+</div>
+<div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+        <div id="mainDiv" class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    @await Html.PartialAsync("_GridButtonPartial", new Tuple<String,String>(
+                                                          @Url.Action(nameof(SkillController.Remove), SkillController.Name),
+                                                          @Url.Action(nameof(SkillController.Form), SkillController.Name)))
+                    <div class="devDiv">
+                        @await Html.PartialAsync("_GridPartial", true)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

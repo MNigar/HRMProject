@@ -1,0 +1,20 @@
+﻿@using HRProject.Extensions
+@using HRProject.Models.DTO
+@model bool?
+@(Html.DevExtreme().DataGrid<TransportDTO>()
+    .ID("dt-grid")
+    .DataSource(d => d.Mvc().Area("Settings").Controller(TransportController.Name).LoadAction(nameof(TransportController.GetAll)))
+    .RemoteOperations(true)
+    .ShowBorders(true)
+    .ShowRowLines(true)
+    .AllowColumnResizing(true)
+    .HRMGrid()
+    .Columns(c =>
+    {
+        c.AddFor(x => x.Name).Caption(stringLocalizer["Name"]);
+        c.AddFor(x => x.Description).Caption(stringLocalizer["Description"]);
+    })
+    .Pager(p => p.AllowedPageSizes(new int[] { 5, 20, 50 }))
+    .Paging(paging => paging.PageSize(10))
+.Selection(s => s.Mode(SelectionMode.Single)).OnSelectionChanged("dtGrid.selectionChanged")
+)

@@ -117,7 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddNew" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
+  <data name="AreYouSureRemoveData" xml:space="preserve">
+    <value>Siz bu məlumatı silməkdən əminsinizmi?</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>Filial</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İmtina</value>
+  </data>
+  <data name="ChooseSelectBox" xml:space="preserve">
+    <value>Seçin</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Şirkət</value>
+  </data>
+  <data name="ContactType" xml:space="preserve">
+    <value>Əlaqə tipləri</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Ölkə</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Təsvir</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Sənəd növləri</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Redaktə et</value>
+  </data>
+  <data name="EducationInstitute" xml:space="preserve">
+    <value>Təhsil yeri</value>
+  </data>
+  <data name="EducationLevel" xml:space="preserve">
+    <value>Təhsil səviyyəsi</value>
+  </data>
+  <data name="IssuedOrganization" xml:space="preserve">
+    <value>Sənəd verən orqan</value>
+  </data>
+  <data name="KnowledgeLevel" xml:space="preserve">
+    <value>Bilik səviyyəsi</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Yüklənir</value>
+  </data>
+  <data name="Localities" xml:space="preserve">
+    <value>Şəhər/rayon</value>
+  </data>
+  <data name="MainPage" xml:space="preserve">
+    <value>Əsas səhifə</value>
+  </data>
+  <data name="MartialStatus" xml:space="preserve">
+    <value>Hərbi vəziyyət</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>Məlumat yoxdur</value>
+  </data>
+  <data name="OperationSuccessfull" xml:space="preserve">
+    <value>Əməliyyat uğurla həyata keçirildi!</value>
+  </data>
+  <data name="OrganizationStructure" xml:space="preserve">
+    <value>Struktur</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Vəzifə</value>
+  </data>
+  <data name="Privilege" xml:space="preserve">
+    <value>İmtiyaz</value>
+  </data>
+  <data name="RelationshipType" xml:space="preserve">
+    <value>Əlaqələr</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Təsdiq</value>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>Dil seçin</value>
+  </data>
   <data name="Settings" xml:space="preserve">
     <value>Tənzimləmələr</value>
+  </data>
+  <data name="Skill" xml:space="preserve">
+    <value>Bacarıq</value>
+  </data>
+  <data name="StaffType" xml:space="preserve">
+    <value>Vəzifə Kateqoriyaları</value>
+  </data>
+  <data name="StaffUnit" xml:space="preserve">
+    <value>Vəzifə</value>
+  </data>
+  <data name="Structure" xml:space="preserve">
+    <value>Inzibati Sturktur</value>
+  </data>
+  <data name="Structures" xml:space="preserve">
+    <value>Inzibati Struktur</value>
+  </data>
+  <data name="StructureType" xml:space="preserve">
+    <value>Struktur Tipi</value>
   </data>
 </root>

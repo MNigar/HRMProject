@@ -275,6 +275,142 @@ namespace HRProject.Areas.Settings.Models
                 Id = viewModel.Id,
                 Name = viewModel.Name,
                 Description = viewModel.Description
+            }; 
+        }
+        internal static PrivilegeViewModel ConvertToPrivilegeViewModel(PrivilegeDTO dto)
+        {
+            return new PrivilegeViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static PrivilegeDTO ConvertToPrivilegeDTO(PrivilegeViewModel viewModel)
+        {
+            return new PrivilegeDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            }; 
+        }
+        
+       internal static RelationshipTypeViewModel ConvertToRelationshipTypeViewModel(RelationshipTypeDTO dto)
+        {
+            return new RelationshipTypeViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static RelationshipTypeDTO ConvertToRelationshipTypeDTO(RelationshipTypeViewModel viewModel)
+        {
+            return new RelationshipTypeDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        internal static SkillViewModel ConvertToSkillViewModel(SkillDTO dto)
+        {
+            return new SkillViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static SkillDTO ConvertToSkillDTO(SkillViewModel viewModel)
+        {
+            return new SkillDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        internal static SpecialitieViewModel ConvertToSpecialitieViewModel(SpecialitieDTO dto)
+        {
+            return new SpecialitieViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static SpecialitieDTO ConvertToSpecialitieDTO(SpecialitieViewModel viewModel)
+        {
+            return new SpecialitieDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        internal static WorkTypeViewModel ConvertToWorkTypeViewModel(WorkTypeDTO dto)
+        {
+            return new WorkTypeViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static WorkTypeDTO ConvertToWorkTypeDTO(WorkTypeViewModel viewModel)
+        {
+            return new WorkTypeDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        internal static ExcludedDayViewModel ConvertToExcludedDayViewModel(ExcludedDayDTO dto)
+        {
+            return new ExcludedDayViewModel
+            {
+                Id = dto.Id,
+                HolidayDate=dto.HolidayDate,
+                IsHoliday=dto.IsHoliday,                
+                Description = dto.Description
+
+            };
+        }
+        internal static ExcludedDayDTO ConvertToExcludedDayDTO(ExcludedDayViewModel viewModel)
+        {
+            return new ExcludedDayDTO
+            {
+                Id = viewModel.Id,
+                HolidayDate = viewModel.HolidayDate,
+                IsHoliday = viewModel.IsHoliday,
+                Description = viewModel.Description
+            };
+        }
+        internal static TransportViewModel ConvertToTransportViewModel(TransportDTO dto)
+        {
+            return new TransportViewModel
+            {
+                Id = dto.Id,
+                Name=dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static TransportDTO ConvertToTransportDTO(TransportViewModel viewModel)
+        {
+            return new TransportDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
             };
         }
     }

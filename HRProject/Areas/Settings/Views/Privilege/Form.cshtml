@@ -1,0 +1,61 @@
+﻿@using HRProject.Areas.Settings.Controllers
+@model HRProject.Areas.Settings.Models.PrivilegeViewModel
+
+<div id="formModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalCenterTitle" style="color: white;">AddNew</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="ti-close"></i>
+                </button>
+            </div>
+            <form class="form-horizontal m-t-20"
+                  asp-action="Form"
+                  asp-controller="Privilege"
+                  asp-area="Settings"
+                  data-ajax="true"
+                  data-ajax-method="POST"
+                  data-ajax-success="success">
+
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    @Html.HiddenFor(x => x.Id)
+
+                    <div class="form-group">
+                        <h6 class="sub-title">Name</h6>
+                        @Html.DevExtreme().TextBoxFor(x => x.Name).StylingMode(EditorStylingMode.Filled)
+                        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger small" })
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <h6 class="sub-title">Description</h6>
+                        @Html.DevExtreme().TextAreaFor(x => x.Description).StylingMode(EditorStylingMode.Filled)
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <input type="button" value="Cancel" class="btn btn-default" data-dismiss="modal" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    function cancel() {
+        location.href = '@Url.Action(nameof(PrivilegeController.Index), PrivilegeController.Name)';
+    }
+
+
+
+</script>
+
+
+

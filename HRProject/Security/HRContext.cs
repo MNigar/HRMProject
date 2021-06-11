@@ -30,7 +30,14 @@ namespace HRProject.Security
         public virtual DbSet<OrganizationStructureDTO> OrganizationStructures { get; set; }
         public virtual DbSet<StaffUnitDTO> StaffUnits { get; set; }
         public virtual DbSet<KnowledgeLevelDTO>  KnowledgeLevels{ get; set; }
-        public virtual DbSet<LanguageDTO> Languages { get; set; }
+        public virtual DbSet<LanguageDTO> Languages { get; set; }        
+        public virtual DbSet<PrivilegeDTO> Privileges { get; set; }
+        public virtual DbSet<RelationshipTypeDTO> RelationshipTypes { get; set; }
+        public virtual DbSet<SkillDTO> Skills { get; set; }
+        public virtual DbSet<SpecialitieDTO> Specialities { get; set; }
+        public virtual DbSet<WorkTypeDTO> WorkTypes { get; set; }
+        public virtual DbSet<ExcludedDayDTO> ExcludedDays { get; set; }
+        public virtual DbSet<TransportDTO> Transports { get; set; }
 
     }
 }

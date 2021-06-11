@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HRProject.Areas.Settings.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HRProject.Areas.Settings.Services
 {
@@ -31,10 +32,15 @@ namespace HRProject.Areas.Settings.Services
 
             if (model.IsNew == true)
             {
+                data.CreatedDate = DateTime.Now;
+                data.UpdatedDate = null;
                 _context.Companies.Add(data);
             }
             else
             {
+                var date = _context.Companies.Where(x => x.Id == data.Id).AsNoTracking().FirstOrDefault().CreatedDate;
+                data.CreatedDate = date;
+                data.UpdatedDate = DateTime.Now;
                 _context.Companies.Update(data);
             }
             _context.SaveChanges();
