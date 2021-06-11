@@ -118,6 +118,45 @@ namespace HRProject.Areas.Structure.Models
 
             };
         }
-        
+        internal static StaffUnitViewModel ConvertToStaffUnitViewModel(StaffUnitDTO dto)
+        {
+            return new StaffUnitViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description,
+                BranchId=dto.BranchId,
+                SalaryMax=dto.SalaryMax,
+                SalaryMin=dto.SalaryMin,
+                CreatedDate=dto.CreatedDate,
+                NeedCount=dto.NeedCount,
+                EndDate=dto.EndDate,
+                StartDate=dto.StartDate,
+                OrderNum=dto.OrderNum,
+                OrganizationStructureId = dto.OrganizationStructureId,
+                StaffTypeId=dto.StaffTypeId,
+                
+
+            };
+        }
+        internal static StaffUnitDTO ConvertToStaffUnitDTO(StaffUnitViewModel viewModel)
+        {
+            return new StaffUnitDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description,
+                BranchId = viewModel.BranchId,
+                SalaryMax = viewModel.SalaryMax,
+                SalaryMin = viewModel.SalaryMin,
+                CreatedDate = viewModel.CreatedDate,
+                NeedCount = viewModel.NeedCount,
+                EndDate = viewModel.EndDate,
+                StartDate = viewModel.StartDate,
+                OrderNum = viewModel.OrderNum,
+                OrganizationStructureId = viewModel.OrganizationStructureId,
+                StaffTypeId = viewModel.StaffTypeId,
+            };
+        }
     }
 }
