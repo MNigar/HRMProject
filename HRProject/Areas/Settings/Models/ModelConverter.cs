@@ -1,4 +1,5 @@
 ﻿using HRProject.Areas.Structure.Models;
+using HRProject.Models;
 using HRProject.Models.DTO;
 using System;
 using System.Collections.Generic;
@@ -228,6 +229,48 @@ namespace HRProject.Areas.Settings.Models
         internal static PositionDTO ConvertToPositionDTO(PositionViewModel viewModel)
         {
             return new PositionDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        
+
+        internal static KnowledgeLevelViewModel ConvertToKnowledgeLevelViewModel(KnowledgeLevelDTO dto)
+        {
+            return new KnowledgeLevelViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static KnowledgeLevelDTO ConvertToKnowledgeLevelDTO(KnowledgeLevelViewModel viewModel)
+        {
+            return new KnowledgeLevelDTO
+            {
+                Id = viewModel.Id,
+                Name = viewModel.Name,
+                Description = viewModel.Description
+            };
+        }
+        
+
+        internal static LanguageViewModel ConvertToLanguageViewModel(LanguageDTO dto)
+        {
+            return new LanguageViewModel
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description
+
+            };
+        }
+        internal static LanguageDTO ConvertToLanguageDTO(LanguageViewModel viewModel)
+        {
+            return new LanguageDTO
             {
                 Id = viewModel.Id,
                 Name = viewModel.Name,

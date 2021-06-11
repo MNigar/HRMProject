@@ -211,6 +211,43 @@ namespace HRProject.Migrations
                     b.ToTable("MartialStatuses");
                 });
 
+            modelBuilder.Entity("HRProject.Models.DTO.OrganizationStructureDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BranchId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("OrganizationStructureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ParentBranchId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("StructureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("OrganizationStructureId");
+
+                    b.HasIndex("ParentBranchId");
+
+                    b.HasIndex("StructureId");
+
+                    b.ToTable("OrganizationStructures");
+                });
+
             modelBuilder.Entity("HRProject.Models.DTO.PositionDTO", b =>
                 {
                     b.Property<Guid>("Id")
@@ -226,6 +263,74 @@ namespace HRProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Positions");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.StaffTypeDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VacationDayLimit")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StaffTypes");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.StaffUnitDTO", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BranchId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("NeedCount")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("OrderNum")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("OrganizationStructureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal?>("SalaryMax")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("SalaryMin")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("StaffTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("StaffTypeId");
+
+                    b.ToTable("StaffUnits");
                 });
 
             modelBuilder.Entity("HRProject.Models.DTO.StructureDTO", b =>
@@ -274,6 +379,54 @@ namespace HRProject.Migrations
                         .HasForeignKey("CountryId");
 
                     b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.OrganizationStructureDTO", b =>
+                {
+                    b.HasOne("HRProject.Models.DTO.BranchDTO", "Branch")
+                        .WithMany()
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("HRProject.Models.DTO.OrganizationStructureDTO", "OrganizationStructure")
+                        .WithMany()
+                        .HasForeignKey("OrganizationStructureId");
+
+                    b.HasOne("HRProject.Models.DTO.BranchDTO", "ParentBranch")
+                        .WithMany()
+                        .HasForeignKey("ParentBranchId");
+
+                    b.HasOne("HRProject.Models.DTO.StructureDTO", "Structure")
+                        .WithMany()
+                        .HasForeignKey("StructureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("OrganizationStructure");
+
+                    b.Navigation("ParentBranch");
+
+                    b.Navigation("Structure");
+                });
+
+            modelBuilder.Entity("HRProject.Models.DTO.StaffUnitDTO", b =>
+                {
+                    b.HasOne("HRProject.Models.DTO.BranchDTO", "Branch")
+                        .WithMany()
+                        .HasForeignKey("BranchId");
+
+                    b.HasOne("HRProject.Models.DTO.StaffTypeDTO", "StaffType")
+                        .WithMany()
+                        .HasForeignKey("StaffTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("StaffType");
                 });
 
             modelBuilder.Entity("HRProject.Models.DTO.StructureDTO", b =>

@@ -56,28 +56,30 @@ namespace HRProject.Areas.Structure.Services
        
             public IQueryable<OrganizationStructureGridModel> GetAll()
             {
+            var result = from org in _context.OrganizationStructures
+                         join strc in _context.Structures
+                         on org.StructureId equals strc.Id
+                         join branch in _context.Branches
+                         on org.BranchId equals branch.Id
+                          
 
-                var result = from org in _context.OrganizationStructures
-                             join strc in _context.Structures
-                             on org.StructureId equals strc.Id
-                             join branch in _context.Branches 
-                             on org.BranchId equals branch.Id
-                             join self in _context.OrganizationStructures 
-                             on org.OrganizationStructureId equals self.Id
-                             join parentBranch in _context.Branches 
-                             on org.ParentBranchId equals parentBranch.Id
-                             select new OrganizationStructureGridModel
-                             {
-                                 Id = org.Id,
-                                 Name = org.Name,
-                                 Description = org.Description,
-                                 BranchId=branch.Id,
-                                 StructureId=strc.Id,
-                                 OrganizationStructureId=self.Id,
-                                 ParentBranchId= parentBranch.Id
+                         join parentBranch in _context.Branches
+                         on org.ParentBranchId equals parentBranch.Id
+                         join self in _context.OrganizationStructures
+                         on org.OrganizationStructureId equals self.Id into selfs
+                         from self in selfs.DefaultIfEmpty()
+                         select new OrganizationStructureGridModel
+                         {
+                             Id = org.Id,
+                             Name = org.Name,
+                             Description = org.Description,
+                             BranchName = branch.Name,
+                             StructureName = strc.Name,
+                             OrganizationStructureName = self.Name,
+                             ParentBranchName = parentBranch.Name
 
-                             };
-                return result;
+                         };
+            return result;
 
             
         }

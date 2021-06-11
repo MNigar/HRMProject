@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <h6 class="sub-title">ParentBranch</h6>
-                        @(Html.DevExtreme().SelectBoxFor(x => x.BranchId)
+                        @(Html.DevExtreme().SelectBoxFor(x => x.ParentBranchId)
                                     .DataSource(x => x.Mvc().Controller(BranchController.Name).LoadAction(nameof(BranchController.GetAll)).Key("Id"))
                                     .DisplayExpr("Name")
                                     .ValueExpr("Id")

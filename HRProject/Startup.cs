@@ -51,9 +51,11 @@ namespace HRProject
             services.AddScoped<StructureTypeService>();
             services.AddScoped<StructureService>();
             services.AddScoped<IssuedOrganizationService>();
+            services.AddScoped<StaffTypeService>();
 
-
-
+            services.AddScoped<OrganizationStructureService>();
+            services.AddScoped<KnowledgeLevelService>();
+            services.AddScoped<LanguageService>();
             services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddMvc()
     .AddDataAnnotationsLocalization(options =>

@@ -29,5 +29,8 @@ namespace HRProject.Security
         
         public virtual DbSet<OrganizationStructureDTO> OrganizationStructures { get; set; }
         public virtual DbSet<StaffUnitDTO> StaffUnits { get; set; }
+        public virtual DbSet<KnowledgeLevelDTO>  KnowledgeLevels{ get; set; }
+        public virtual DbSet<LanguageDTO> Languages { get; set; }
+
     }
 }
